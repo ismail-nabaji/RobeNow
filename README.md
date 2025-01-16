@@ -1,79 +1,149 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# **RobeNow - React Native App** 👗📱
 
-# Getting Started
+Bienvenue sur **RobeNow**, une application de gestion de location de robes développée avec **React Native**.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## 🛠️ Installation et Configuration de l'Environnement
 
-## Step 1: Start the Metro Server
+Avant de commencer, assure-toi d'avoir un environnement de développement **React Native** configuré correctement. Suis le guide officiel jusqu'à l'étape ["Creating a new application"](https://reactnative.dev/docs/environment-setup).
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+### 1️⃣ **Prérequis**
+- **Node.js** (LTS recommandé) → [Télécharger ici](https://nodejs.org/)
+- **Yarn** (optionnel mais recommandé)  
+  ```bash
+  npm install --global yarn
+  ```
+- **Android Studio** (avec SDK Android installé) → [Télécharger ici](https://developer.android.com/studio)
+- **Xcode** (pour iOS) → Installable depuis l'App Store
+- **Ruby 3.x** (pour CocoaPods sur iOS)
+  ```bash
+  brew install rbenv
+  rbenv install 3.2.2
+  rbenv global 3.2.2
+  ```
 
-To start Metro, run the following command from the _root_ of your React Native project:
-
+### 2️⃣ **Cloner le projet**
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+git clone https://github.com/VOTRE_REPO/robeNow.git
+cd robeNow
 ```
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
+### 3️⃣ **Installer les dépendances**
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+yarn install  # ou npm install
 ```
 
-### For iOS
-
+### 4️⃣ **Installer les Pods pour iOS**
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+cd ios
+pod install
+cd ..
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+---
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## 🚀 Démarrer l'Application
 
-## Step 3: Modifying your App
+### 1️⃣ **Lancer le serveur Metro**
+Metro est le bundler JavaScript qui accompagne React Native.
 
-Now that you have successfully run the app, let's modify it.
+```bash
+yarn start  # ou npm start
+```
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+Laisse **Metro** tourner dans une fenêtre de terminal et ouvre un autre terminal pour exécuter l'application.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+### 2️⃣ **Démarrer sur Android**
+```bash
+yarn android  # ou npm run android
+```
+📌 **Assure-toi d'avoir un émulateur Android actif** (ou un téléphone branché en USB avec le mode développeur activé).
 
-## Congratulations! :tada:
+### 3️⃣ **Démarrer sur iOS** (macOS uniquement)
+```bash
+yarn ios  # ou npm run ios
+```
+📌 **Assure-toi que Xcode est installé et qu'un simulateur est ouvert.** Tu peux aussi ouvrir `ios/robeNow.xcworkspace` et lancer l’application depuis Xcode.
 
-You've successfully run and modified your React Native App. :partying_face:
+---
 
-### Now what?
+## 🛠️ **Développement et Modification**
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+### Modifier le code
+1. Ouvre **`App.tsx`** dans ton éditeur de code.
+2. Modifie le fichier et **sauvegarde**.
+3. L’application se mettra à jour automatiquement via **Fast Refresh**.
 
-# Troubleshooting
+### Recharger l’application
+- **Android** : Appuie deux fois sur `R` ou utilise `Cmd + M` sur macOS (`Ctrl + M` sur Windows/Linux) pour ouvrir le menu développeur.
+- **iOS** : Appuie sur `Cmd + R` dans le simulateur.
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+---
 
-# Learn More
+## 🏗️ **Structure du Projet**
+```bash
+robeNow/
+ ├── android/          # Configuration Android
+ ├── ios/              # Configuration iOS
+ ├── src/              
+ │   ├── components/   # Composants réutilisables
+ │   ├── screens/      # Écrans principaux
+ │   ├── services/     # Logique métier (API, stockage, etc.)
+ │   ├── assets/       # Images, icônes, etc.
+ │   ├── App.tsx       # Point d'entrée de l'application
+ ├── package.json      
+ ├── README.md
+ ├── .gitignore
+ ├── babel.config.js
+ ├── metro.config.js
+ └── tsconfig.json
+```
 
-To learn more about React Native, take a look at the following resources:
+---
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## 🛠️ **Dépannage**
+### ❌ Erreur "Unable to open base configuration reference file"
+➡️ **Solution** :
+```bash
+cd ios
+rm -rf Pods Podfile.lock
+pod install
+cd ..
+```
+
+### ❌ Erreur CocoaPods sur Mac M1/M2
+➡️ Essaye :
+```bash
+arch -x86_64 pod install
+```
+
+### ❌ Erreur lors de l’installation des dépendances ?
+```bash
+rm -rf node_modules
+yarn install
+```
+
+### ❌ Autres problèmes ?
+Utilise :
+```bash
+npx react-native doctor
+```
+Et consulte la documentation officielle :  
+[https://reactnative.dev/docs/troubleshooting](https://reactnative.dev/docs/troubleshooting)
+
+---
+
+## 📚 **Ressources**
+- [React Native Docs](https://reactnative.dev/docs/getting-started)
+- [CocoaPods](https://cocoapods.org/)
+- [rbenv](https://github.com/rbenv/rbenv)
+- [Android Developer](https://developer.android.com/studio)
+
+---
+
+## 📜 **Licence**
+Ce projet est sous licence **MIT**. Libre à toi de l'utiliser et de l'améliorer ! 🎉
+
+---
+
+## 🎉 **Félicitations !**
+Tu as maintenant un environnement React Native prêt à l’emploi pour **RobeNow**. 🚀 Bon développement ! 🎨✨
